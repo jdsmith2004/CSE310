@@ -30,7 +30,6 @@ CSS
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
 * Pass auth token to firebase database to store user settings info
 * Create website to pass to from the Login Page
 * Improve color theming and add animations
