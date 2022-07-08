@@ -1,0 +1,636 @@
+@import url('https://fonts.googleapis.com/css2?family=Orelega+One&family=PT+Serif&family=Tapestry&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Tapestry&display=swap');
+
+:root {
+  --primary-color: #eb6ab1;
+  --text-color-male: #ffffff;
+  --sidebar-transparent: rgb(235, 106, 177, 0.7);
+  --secondary-color: #57dcea;
+  --accent1-color: #dec4a1;
+  --accent2-color: #edcf8e;
+  --header-height: 3.5rem;
+  --nav-width: 219px;
+
+  /*========== Colors ==========*/
+  --first-color: #12b3c5;
+  --first-color-light: #57dcea;
+  --title-color: #19181B;
+  --text-color-male-light: white;
+  --body-color: #0e8693;
+  --container-color: #eb6ab1;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'PT Serif', sans-serif, Helvetica;
+  --normal-font-size: .938rem;
+  --small-font-size: .75rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-fixed: 100;
+}
+
+#homePage {
+  background-image: url(/images/backgrounds/snowyNorthernLights.jpg), url(https://jdsmith2004.github.io/personal_website/images/backgrounds/snowyNorthernLights.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  /* background-size: contain;  */
+  background-size: cover;
+  /* prevent user from highlighting text */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* background-image: linear-gradient(   SWITCH BACKGROUND TO MULTI-HUE
+    45deg,
+    #dec4a1,
+    #57dcea
+  ); */
+#goals {
+  position: absolute;
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
+
+/* spin animation for goals */
+@keyframes animOne {
+  0% {
+    -webkit-transform: scale(.1) rotateZ(0);
+    transform: scale(.1) rotateZ(0);
+  }
+
+  50% {
+    -webkit-transform: scale(2) rotateZ(360deg);
+    transform: scale(2) rotateZ(360deg);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotateZ(720deg);
+    transform: scale(1) rotateZ(720deg);
+  }
+}
+
+@keyframes animTwo {
+  0% {
+    -webkit-transform: scale(1) rotateZ(720deg);
+    transform: scale(1) rotateZ(720deg);
+  }
+
+  50% {
+    -webkit-transform: scale(2) rotateZ(360deg);
+    transform: scale(2) rotateZ(360deg);
+  }
+
+  100% {
+    -webkit-transform: scale(.1) rotateZ(0);
+    transform: scale(.1) rotateZ(0);
+  }
+}
+
+.animateOne {
+  animation-name: animOne;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
+}
+
+.animateTwo {
+  animation-name: animTwo;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+}
+
+#goalBox {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: none;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+/* .goalBoxes {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+} */
+
+/* glowing animation for goals */
+#goalBox {
+  background: linear-gradient(-45deg, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* #goalBox:before {
+  content: '';
+  background: linear-gradient(45deg, var(--primary-color), #68ad94, var(--sidebar-transparent));
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 800%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 100s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+} */
+
+/* checkmark size */
+.flamingCheckmark {
+  height: 8vw;
+  width: auto;
+  z-index: 0;
+}
+
+.goalBoxes {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+#goalOne {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+#goalTwo {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+#goalThree {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+#goalFour {
+  grid-column: 4/5;
+  grid-row: 1/2;
+}
+
+#goalFive {
+  grid-column: 5/6;
+  grid-row: 1/2;
+}
+
+#goalSix {
+  grid-column: 6/7;
+  grid-row: 1/2;
+}
+
+#num {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  z-index: 1;
+  place-self: center;
+  /* color: var(--text-color-male); */
+}
+
+.welcome {
+  display: flexbox;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4em;
+  align-items: center;
+  text-align: center;
+  color: var(--text-color-male);
+}
+
+/* glow hover for hello name */
+#hello {
+  /* text underline code */
+  background-image: linear-gradient(90deg, rgba(239, 79, 40, 228), rgba(6, 44, 250, 218));
+  background-size: 0% 3px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+
+  transition: ease-in 300ms;
+  /* extra styling  */
+  text-decoration: none;
+  font-weight: 900;
+  /* border: 4px solid var(--text-color-male); */
+}
+
+#hello:hover {
+  background-size: 100% 3px;
+  border-style: 100% 3px;
+}
+
+.randomMotivationalMessage {
+  display: flexbox;
+  position: absolute;
+  /* PUT TEXT AT THE BOTTOM OF THE SCREEN */
+  top: 50%;
+  top: 96%;
+  /*PUT TEXT AT THE TOP OF THE SCREEN*/
+  /* top: 0%;
+  padding-top: 50px;  */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  align-items: center;
+  text-align: center;
+  color: var(--text-color-male-light);
+}
+
+/* settings icon to bottom left */
+#settingsIcon {
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+}
+
+/* weather widget on homepage */
+.weather-container {
+  background-image: url("/images/backgrounds/starrySkiMountain.jpg"), url(https://jdsmith2004.github.io/personal_website/images/backgrounds/starrySkiMountain.jpg);
+  /* filter: blur(4px);
+  -webkit-filter: blur(4px); */
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 25px 25px 40px 0px rgba(0, 0, 0, 0.33);
+  color: #fff;
+  overflow: hidden;
+
+  display: block;
+  margin: 0 auto;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  border-radius: 10px;
+  padding-bottom: 50px;
+  z-index: -1;
+}
+
+.weather-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 25px);
+  grid-column-gap: 0px;
+  grid-row-gap: 5px;
+
+  width: 20%;
+  padding: 15px 15px 15px 20px;
+  padding: 15px;
+  margin: 15px;
+}
+
+.location {
+  grid-row: 1/2;
+  grid-column: 1/4;
+
+  justify-self: start;
+  align-self: center;
+}
+
+#date-time {
+  grid-row: 2/3;
+  grid-column: 1/4;
+
+  justify-self: start;
+  align-self: center;
+  z-index: 2;
+}
+
+.weather-icon {
+  justify-content: center;
+  align-items: center;
+  grid-row: 3/5;
+  grid-column: 1/4;
+
+  display: block;
+  margin: 0 8px 0 0;
+  z-index: 2;
+}
+
+.weather-icon p {
+  text-transform: capitalize;
+}
+
+.weather-icon img {
+  display: block;
+  float: right;
+  height: 100%;
+}
+
+.temperature-value {
+  grid-row: 1/5;
+  grid-column: 4/7;
+
+  place-self: center;
+  padding: 0;
+  margin: 0;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  font-size: 4vw;
+}
+
+.app-title {
+  width: 300px;
+  height: 50px;
+  border-radius: 10px 10px 0 0;
+}
+
+.app-title p {
+  text-align: center;
+  padding: 15px;
+  margin: 0 auto;
+  font-size: 2.5vw;
+  color: white;
+}
+
+.notification {
+  background-color: #f8d7da;
+  display: none;
+}
+
+.notification p {
+  color: white;
+  font-size: 2.5vw;
+  margin: 0;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.weather-icon img {
+  display: block;
+  margin: 0 auto;
+}
+
+.location p {
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: center;
+  font-size: 1vw;
+}
+
+/* settings start*/
+* {box-sizing: border-box}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: 300px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 300px;
+}
+.pinkClouds {
+  width: 100px;
+}
+.settings-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* SETTINGS END */
+/* SIGN-UP/SIGNIN PAGE */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+#signupBody {
+  background-image: url('/images/backgrounds/stormyDock.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  /* background-size: contain;  */
+  background-size: cover;
+  /* prevent user from highlighting text */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* font-size: 4em; */
+  align-items: center;
+  text-align: center;
+  color: var(--text-color-male);
+
+  width: 80%;
+  height: 75%;
+}
+/* #preferredAction {
+  background: var(--primary-color);
+  color: white;
+  display: inline-block;
+  padding: 0em 2em;
+  margin: 6em auto;
+  box-shadow: 0 50px 50px rgba(0, 0, 0, 0.2);
+  padding: 100px;
+
+  position: absolute;
+  align-content: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 50%;
+  width: 30%;
+
+  display: grid;
+} */
+#sign-up-form, #sign-in-form {
+  background: var(--primary-color);
+  color: white;
+  /* padding: 0em 2em; */
+  /* margin: 6em auto; */
+  box-shadow: 0 50px 50px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+
+  height: 80%;
+  width: 100%;
+  place-self: center;
+  /* box sizing */
+}
+#sign-up-form h1, #sign-in-form h1 {
+  padding-bottom: 25px;
+}
+#sign-up-form label, #sign-in-form label {
+  display: block;
+  text-align: left;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+#sign-up-form button, #sign-in-form button {
+  margin-top: 15px;
+
+  width: auto;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  background: #fff;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #666;
+  box-shadow: 0 6px 6px #06f;
+  outline: none;
+}
+@keyframes gradient {
+  0% {
+    background: radial-gradient(circle at center, rgba( 255, 125 , 125, 0 ) 0%, #fff 0%, #fff 100%);
+  }
+  25% {
+    background: radial-gradient(circle at center, rgb(235, 106, 177, 0.3) 24%, #fff 25%, #fff 100%);
+  }
+  50% {
+    background: radial-gradient(circle at center, rgb(235, 106, 177, 0.5) 49%, #fff 50%, #fff 100%);
+  }
+  75% {
+    background: radial-gradient(circle at center, rgb(235, 106, 177, 0.8) 74%, #fff 75%, #fff 100%);
+  }
+  100% {
+    color: #fff;
+    background: radial-gradient(circle at center, rgb(235, 106, 177) 99%, #fff 100%, #fff 100%);
+  }
+}
+#sign-up-form button:active, #sign-in-form button:active {
+    /* set time duration to your needs */
+    animation: gradient 100ms;
+    background: rgb(235, 106, 177);
+    color: #fff;
+    box-shadow: none;
+}
+#sign-up-form input, #sign-in-form input {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 100%;
+  height: 25px;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+}
+.navigation ol {
+  list-style: none;
+}
+.navigation li {
+  display: inline;
+  list-style-type: none;
+}
+.navigation a {
+  text-decoration: none;
+}
+#sign-form li {
+  list-style-type: none;
+}
+.questions li {
+  display: block;
+  padding: 15px;
+}
+/* WELCOME START */
+.welcomeBody {
+  background-image: url('/images/pinkClouds.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  /* background-size: contain;  */
+  background-size: cover;
+  /* prevent user from highlighting text */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.welcomeText {
+  font-size: 50px;
+}
+/* WELCOME END */
