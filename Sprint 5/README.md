@@ -1,5 +1,5 @@
 # Overview
-The goal of this of this website was to create a replacement for the chrome homepage and replace it with the weather, a hello message, and a row of goal boxes to be checked off as tasks are completed.
+The goal of this of this website was to create a replacement for the chrome homepage and replace it with the weather, a hello message, and a row of goal boxes to be checked off as tasks are completed. I also wanted to learn how to create a website and use JavaScript to affect components on the screen.
 
 This software system allows a user to view the weather, view a random quote on the bottom of the screen, and check and uncheck the goal checkboxes (more to be implemented in the future.) 
 
