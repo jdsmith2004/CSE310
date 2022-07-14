@@ -1,6 +1,6 @@
 function testFunc(goalBox) {
   let image = goalBox.children[0].style.visibility
-  console.log(image)
+  // console.log(image)
   if (image == "hidden") {
     goalBox.children[0].style.visibility = "visible";
     goalBox.classList.add("animateOne");

@@ -5,7 +5,7 @@ This software system allows a user to view the weather, view a random quote on t
 
 I wrote this because I struggle to manage my goals and I'd love to have an interactive replacement for the home screen with goals, a welcome message, etc.
 
-[Software Demo Video](https://www.loom.com/share/29f87775bb6e452da14bf79e0cc0e777)
+[Software Demo Video](https://www.loom.com/share/83d0d4e316824ef990e7c2c2acc3e940)
 
 # Development Environment
 
